@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random</title>
+
+  <script>
+
+    // let length = 19; 
+    let length1 = 11;
+    let result = [];
+    let Concat = [];
+    const name = 'Demo App';
+    let ConcatR = [''];
+    var p
+
+    const characters = [
+      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+      'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ];
+
+    for (let i = 0; i < length1; ) {
+      
+        const randomNum = Math.floor(Math.random() * characters.length);
+        if(!result.includes(characters[randomNum])){
+          result.push(characters[randomNum]);
+            i++;
+        }
+    }
+
+    document.write('Random Array :', result, ' <br /> <br />')
+    document.write('Name :', name, ' <br /> <br />')
+   
+    for (let i = 0; i < result.length; i++) {
+      Concat.push(result[i])
+    }
+
+    for (let i = 0; i < name.length; i++) {
+      Concat.push(name[i]);
+    }
+
+    { console.log(Concat) }
+
+    document.write('Concat Array :', Concat, ' <br /> <br />')
+
+
+
+    let clonedConcat = [...Concat];
+    
+    while (clonedConcat.length > 0) {
+      var randomIndex = Math.floor(Math.random() * clonedConcat.length);
+      ConcatR.push(clonedConcat[randomIndex]);
+      clonedConcat.splice(randomIndex, 1);
+      // clonedConcat = clonedConcat.filter((_, index) => index !== randomIndex);
+    }
+
+
+    document.write('Concat Random Array :', ConcatR, ' <br /> <br />')
+
+
+
+  </script>
+</head>
+
+<body></body>
+
+</html>

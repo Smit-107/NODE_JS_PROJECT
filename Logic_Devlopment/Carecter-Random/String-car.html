@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let length1 = 16;
+        const name = 'demoapp';
+        let result = '';
+        let Concat = '';
+        let ConcatR = '';
+
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let availableCharacters = characters;
+
+        for (let i = 0; i < length1; i++) {
+            const randomIndex = Math.floor(Math.random() * availableCharacters.length);
+            result += availableCharacters.charAt(randomIndex);
+            availableCharacters = availableCharacters.slice(0, randomIndex) + availableCharacters.slice(randomIndex + 1);
+        }
+        
+        document.write('Random String :', result, ' <br /> <br />')
+        document.write('Name :', name, ' <br /> <br />')
+    
+        // Concat = name
+        let clonedConcat1 = result
+
+        while (clonedConcat1.length - name.length > 0) {
+          var randomIndex = Math.floor(Math.random() * clonedConcat1.length);
+          Concat += clonedConcat1.charAt(randomIndex);
+          clonedConcat1 = clonedConcat1.slice(0, randomIndex) + clonedConcat1.slice(randomIndex + 1);
+
+        }
+
+        Concat += name
+          
+        document.write('Concatenated String :', Concat, ' <br /> <br />')
+    
+        let clonedConcat = Concat;
+    
+        while (clonedConcat.length > 0) {
+          var randomIndex = Math.floor(Math.random() * clonedConcat.length);
+          ConcatR += clonedConcat.charAt(randomIndex);
+          clonedConcat = clonedConcat.slice(0, randomIndex) + clonedConcat.slice(randomIndex + 1);
+        }
+    
+        document.write('Random Concatenated String :', ConcatR, ' <br /> <br />')
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
